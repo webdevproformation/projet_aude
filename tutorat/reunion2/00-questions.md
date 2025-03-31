@@ -154,12 +154,13 @@ created: src/Entity/User.php
 ```
 
 
-=> créer tout ce dont tu as besoin pour t'authentifier 
-=> table MEMBRE contient un champ email => RECHERCHER utiliseur
-=> table MEMBRE un colonne password => DOIT stoker les informations de manière hashée 
-=> symfony va comparer une valeur en clair (plainpassword) avec la colonne password de la table qui contient du texte hashé 
+- créer tout ce dont tu as besoin pour t'authentifier 
+- table MEMBRE contient un champ email => RECHERCHER utiliseur
+- table MEMBRE un colonne password => DOIT stoker les informations de manière hashée 
+- symfony va comparer une valeur en clair (plainpassword) avec la colonne password de la table qui contient du texte hashé 
 
 
-=> il reste à créer le formulaire de connexion
-=> il reste à créer le formulaire de création de profil 
+
+- il reste à créer le formulaire de connexion
+- il reste à créer le formulaire de création de profil 
 
