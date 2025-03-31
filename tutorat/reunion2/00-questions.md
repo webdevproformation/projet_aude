@@ -77,7 +77,7 @@ when@test:
 <div class="invalid-feedback"> 
 ```   
 
-pour le texte dans l'erreur => {{ form_errors() }} , il vient de l'Assert dans l'entité
+pour le texte dans l'erreur => `{{ form_errors() }}` , il vient de l'Assert dans l'entité
 
 <https://symfony.com/doc/current/reference/constraints/Length.html>
 
