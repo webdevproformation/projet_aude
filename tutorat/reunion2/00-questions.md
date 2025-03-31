@@ -126,16 +126,18 @@ symfony serve
 
 # question sur les migrations
 
-
+```txt
 dans ma relation ManyToOne entre Request Offer et Member, le fichier de migrations a créé une TEMPORARY TABLE. Je ne sais pas ce que cela veut dire. J’ai fait une erreur quelque part ?dans ma relation ManyToOne entre Request Offer et Member, le fichier de migrations a créé une TEMPORARY TABLE. Je ne sais pas ce que cela veut dire. J’ai fait une erreur quelque part ?
+```
+
+on est sur une base de donnée SQLITE :
 
 ```txt
 DATABASE_URL="sqlite:///%kernel.project_dir%/var/data.db"
 ```
 
-et je modifie la structure de ma table => ajouter un champ prix sur les requêtes
-
-table temporaire permettent de garder les données lorsque l'on veut changer le nom d'une colonne (sur SQLITE)
+- si j'ai une colonne ET que cette colonne contient des données ET sur l'on veut modifier le nom de cette colonne 
+- table temporaire permettent de garder les données lorsque l'on veut changer le nom d'une colonne (sur SQLITE)
 
 # Authentification
 
