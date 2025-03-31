@@ -133,3 +133,27 @@ et je modifie la structure de ma table => ajouter un champ prix sur les requête
 
 table temporaire permettent de garder les données lorsque l'on veut changer le nom d'une colonne (sur SQLITE)
 
+# Authentification
+
+au rdv n°6,  tu as commencé à me dire que Member et User n’étaient pas forcément la même chose, mais on a embrayé sur autre chose. Je ne dois pas créer une entité User à part pour l’authentiification, non ? 
+
+=> tu peux utiliser n'importe quel nom pour l'entité en charge de stocker les profils utilisateurs => User / Membre 
+
+
+symfony console make:user
+
+
+created: src/Entity/User.php
+ created: src/Repository/UserRepository.php
+ updated: src/Entity/User.php
+ updated: config/packages/security.yaml
+
+=> créer tout ce dont tu as besoin pour t'authentifier 
+=> table MEMBRE contient un champ email => RECHERCHER utiliseur
+=> table MEMBRE un colonne password => DOIT stoker les informations de manière hashée 
+=> symfony va comparer une valeur en clair (plainpassword) avec la colonne password de la table qui contient du texte hashé 
+
+
+=> il reste à créer le formulaire de connexion
+=> il reste à créer le formulaire de création de profil 
+
