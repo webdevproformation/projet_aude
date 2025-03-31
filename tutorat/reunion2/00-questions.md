@@ -7,7 +7,6 @@
 
 - register.html.twig et contact/index.html.twig
 
-
 ```txt
 les messages d'erreurs n'apparaissent pas en rouge quoique je fasse. style: 'red' ou classe error-message avec la couleur fixée dans la feuille form.css =>l'attribut n'apparait pas sur la balise li créée.  code extrait du code du thème bootstrap_5_layout.html.twig'. 
 ```
@@ -21,7 +20,6 @@ les messages d'erreurs n'apparaissent pas en rouge quoique je fasse. style: 'red
 twig:
     file_name_pattern: '*.twig'
     
-
 when@test:
     twig:
         strict_variables: true
@@ -55,33 +53,38 @@ when@test:
 
 <https://getbootstrap.com/docs/5.3/forms/form-control/>
 
+```html
 {{ form_label(registrationForm.email, 'Email :' ) }}
 
 <label for="xxxxx" class="form-label">Email :</label>
+```
 
 // si tout va bien 
 
+```html
 {{ form_widget(registrationForm.email, { attr: { aria_label:'Veuillez obligatoirement saisir votre email'} }) }}
 
 <input type="email" class="form-control"  aria_label="Veuillez obligatoirement saisir votre email" id="xxxxx">
-
+```
 
 // si tout erreur 
 
+```html
 <input type="email" class="form-control is-invalid"  aria_label="Veuillez obligatoirement saisir votre email" id="xxxxx">
- 
 
 {{ form_errors(registrationForm.email) }}
 
-<div class="invalid-feedback">    
+<div class="invalid-feedback"> 
+```   
 
 pour le texte dans l'erreur => {{ form_errors() }} , il vient de l'Assert dans l'entité
 
-https://symfony.com/doc/current/reference/constraints/Length.html
+<https://symfony.com/doc/current/reference/constraints/Length.html>
 
-1 ajouter la config au fichier .yaml
-2 entité => ajouter une Constraint 
+1. ajouter la config au fichier .yaml
+2. entité => ajouter une Constraint 
 
+```php
 use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Column()]
@@ -95,9 +98,9 @@ use Symfony\Component\Validator\Constraints as Assert;
         maxMessage: "blabla"
 )]
 private ?string $type = null ;
+```
 
-
-terminal 
+## CRUD via le terminal 
 
 ```sh
 symfony console make:crud
@@ -117,7 +120,7 @@ test unitaire => no
 symfony serve
 ```
 
-https://127.0.0.1:8001/requete
+<https://127.0.0.1:8001/requete>
 
 
 
@@ -126,8 +129,9 @@ https://127.0.0.1:8001/requete
 
 dans ma relation ManyToOne entre Request Offer et Member, le fichier de migrations a créé une TEMPORARY TABLE. Je ne sais pas ce que cela veut dire. J’ai fait une erreur quelque part ?dans ma relation ManyToOne entre Request Offer et Member, le fichier de migrations a créé une TEMPORARY TABLE. Je ne sais pas ce que cela veut dire. J’ai fait une erreur quelque part ?
 
-
+```txt
 DATABASE_URL="sqlite:///%kernel.project_dir%/var/data.db"
+```
 
 et je modifie la structure de ma table => ajouter un champ prix sur les requêtes
 
@@ -139,7 +143,7 @@ au rdv n°6,  tu as commencé à me dire que Member et User n’étaient pas fo
 
 => tu peux utiliser n'importe quel nom pour l'entité en charge de stocker les profils utilisateurs => User / Membre 
 
-
+```sh
 symfony console make:user
 
 
@@ -147,6 +151,8 @@ created: src/Entity/User.php
  created: src/Repository/UserRepository.php
  updated: src/Entity/User.php
  updated: config/packages/security.yaml
+```
+
 
 => créer tout ce dont tu as besoin pour t'authentifier 
 => table MEMBRE contient un champ email => RECHERCHER utiliseur
