@@ -121,4 +121,15 @@ https://127.0.0.1:8001/requete
 
 
 
-# 
+# question sur les migrations
+
+
+dans ma relation ManyToOne entre Request Offer et Member, le fichier de migrations a créé une TEMPORARY TABLE. Je ne sais pas ce que cela veut dire. J’ai fait une erreur quelque part ?dans ma relation ManyToOne entre Request Offer et Member, le fichier de migrations a créé une TEMPORARY TABLE. Je ne sais pas ce que cela veut dire. J’ai fait une erreur quelque part ?
+
+
+DATABASE_URL="sqlite:///%kernel.project_dir%/var/data.db"
+
+et je modifie la structure de ma table => ajouter un champ prix sur les requêtes
+
+table temporaire permettent de garder les données lorsque l'on veut changer le nom d'une colonne (sur SQLITE)
+

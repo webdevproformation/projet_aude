@@ -56,6 +56,9 @@ class Requete {
     #[ORM\ManyToMany(targetEntity: Genre::class, mappedBy: 'requetes')]
     private Collection $genres;
 
+    #[ORM\Column(nullable: true)]
+    private ?float $price = null;
+
     public function __construct()
     {
         $this->genres = new ArrayCollection();
@@ -192,6 +195,18 @@ class Requete {
     public function setCreatedAt($created_at) :static
     {
         $this->created_at = $created_at;
+
+        return $this;
+    }
+
+    public function getPrice(): ?float
+    {
+        return $this->price;
+    }
+
+    public function setPrice(?float $price): static
+    {
+        $this->price = $price;
 
         return $this;
     }

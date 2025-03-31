@@ -26,6 +26,7 @@ class RequeteType extends AbstractType
             ->add('deadline', DateType::class, [
                 'widget' => 'single_text'
             ])
+            ->add('price')
             ->add('title')
             ->add('description')
             ->add('genres', EntityType::class, [
