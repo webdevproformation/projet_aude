@@ -141,9 +141,11 @@ DATABASE_URL="sqlite:///%kernel.project_dir%/var/data.db"
 
 # Authentification
 
+```txt
 au rdv n°6,  tu as commencé à me dire que Member et User n’étaient pas forcément la même chose, mais on a embrayé sur autre chose. Je ne dois pas créer une entité User à part pour l’authentiification, non ? 
+```
 
-=> tu peux utiliser n'importe quel nom pour l'entité en charge de stocker les profils utilisateurs => User / Membre 
+=> tu peux utiliser n'importe quel nom pour l'entité en charge de stocker les profils utilisateurs => `User` / `Membre` 
 
 ```sh
 symfony console make:user
